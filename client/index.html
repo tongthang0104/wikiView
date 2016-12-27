@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>wiki view</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+  <body ng-app="wikiView">
+    <div ng-controller="mainController">
+      <form ng-submit="search()">
+        <input type="text" ng-model="searchText" placeholder="Enter your text here"/>
+      </form>
+
+      <div class="wrapper">
+        <ul>
+          <a href="{{result.page}}" target="_blank" ng-repeat="result in results">
+            <li>
+              <h1>{{result.title}}</h1>
+              <p>{{result.body}}</p>
+            </li>
+          </a>
+        </ul>
+      </div>
+    </div>
+  </body>
+  <script src="app.js"></script>
+</html>
